@@ -16,5 +16,5 @@
 - [Скриншот результата выполнения команды](https://monosnap.com/file/7GaX6AHCYibaFASdMT784KkHVFRsG1)
 
 #### Удаляем контакт
-Пример команды: `node index.js --action remove --id=3`
-[Скриншот результата выполнения команды](https://monosnap.com/file/bIDjC6940QcY8PfWdfr3vTwc1XNmNn)
+- Пример команды: `node index.js --action remove --id=3`
+- [Скриншот результата выполнения команды](https://monosnap.com/file/bIDjC6940QcY8PfWdfr3vTwc1XNmNn)
