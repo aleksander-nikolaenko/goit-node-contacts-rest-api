@@ -10,18 +10,17 @@ const addSchema = Joi.object({
 });
 
 const validation = (schema) => (req, res, next) => {
+  if (Object.keys(req.body).length === 0) {
+    next(createError(400, "missing fields"));
+    return;
+  }
+
   const { error } = schema.validate(req.body);
-  const { method } = req;
   if (error) {
     const [details] = error.details;
-    let { message } = details;
+    const { message } = details;
     if (details.type === "any.required") {
-      if (method === "PUT") {
-        message = "missing fields";
-      } else {
-        message = "missing required name field";
-      }
-      next(createError(400, message));
+      next(createError(400, "missing required name field"));
       return;
     }
     next(createError(400, "Validation error, field " + message));
