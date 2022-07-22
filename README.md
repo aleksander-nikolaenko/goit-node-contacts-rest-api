@@ -22,7 +22,7 @@
 ### @ POST /api/contacts
 
 - Получает `body` в формате `{name, email, phone}` (все поля обязательны)
-- Если в body нет каких-то обязательных полей, возвращает json с ключом `{"message": "missing required field 'name'"}` и статусом `400`
+- Если в body нет каких-то обязательных полей, возвращает json с ключом `{"message": "missing required field 'field name' "}` и статусом `400`
 - Если с `body` все хорошо, добавляет уникальный идентификатор в объект контакта возвращает объект с добавленным `id` `{id, name, email, phone}` и статусом `201`
 
 ### @ DELETE /api/contacts/:id
