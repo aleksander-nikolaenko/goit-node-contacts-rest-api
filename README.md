@@ -1,10 +1,3 @@
-## Команди
-
-- `npm start` &mdash; старт сервера в режиме production
-- `npm run start:dev` &mdash; старт сервера в режиме разработки (development)
-- `npm run lint` &mdash; запустить выполнение проверки кода при помощи eslint
-- `npm lint:fix` &mdash; та же проверка линтера, но с авто исправлением простых ошибок
-
 ## REST API поддерживает следующие рауты
 
 ### ENDPOINT: **CONTACTS**
@@ -77,7 +70,7 @@ ResponseBody: {
 }
 ```
 
-#### Error response
+or
 
 ```shell
 Status: 404 Not Found
@@ -86,8 +79,7 @@ ResponseBody: {
   "message": "Not found"
 }
 ```
-
-#### Error response
+or
 
 ```shell
 Status: 500 Internal Server Error
@@ -151,7 +143,7 @@ ResponseBody: {
 }
 ```
 
-#### Error response
+or
 
 ```shell
 Status: 404 Not Found
@@ -161,7 +153,7 @@ ResponseBody: {
 }
 ```
 
-#### Error response
+or
 
 ```shell
 Status: 500 Internal Server Error
@@ -227,7 +219,7 @@ ResponseBody: {
 }
 ```
 
-#### Error response
+or
 
 ```shell
 Status: 400 Bad Request
@@ -237,7 +229,7 @@ ResponseBody: {
 }
 ```
 
-#### Error response
+or
 
 ```shell
 Status: 404 Not Found
@@ -246,8 +238,7 @@ ResponseBody: {
   "message": "Not found"
 }
 ```
-
-#### Error response
+or
 
 ```shell
 Status: 500 Internal Server Error
@@ -301,7 +292,7 @@ ResponseBody: {
 }
 ```
 
-#### Error response
+or
 
 ```shell
 Status: 404 Not Found
@@ -311,7 +302,7 @@ ResponseBody: {
 }
 ```
 
-#### Error response
+or
 
 ```shell
 Status: 500 Internal Server Error
@@ -378,7 +369,7 @@ ResponseBody: {
 }
 ```
 
-#### Error response
+or
 
 ```shell
 Status: 400 Bad Request
@@ -388,7 +379,7 @@ ResponseBody: {
 }
 ```
 
-#### Error response
+or
 
 ```shell
 Status: 404 Not Found
@@ -398,7 +389,7 @@ ResponseBody: {
 }
 ```
 
-#### Error response
+or
 
 ```shell
 Status: 500 Internal Server Error
@@ -463,7 +454,7 @@ ResponseBody: {
 }
 ```
 
-#### Error response
+or
 
 ```shell
 Status: 400 Bad Request
@@ -473,7 +464,7 @@ ResponseBody: {
 }
 ```
 
-#### Error response
+or
 
 ```shell
 Status: 404 Not Found
@@ -482,8 +473,7 @@ ResponseBody: {
   "message": "Not found"
 }
 ```
-
-#### Error response
+or
 
 ```shell
 Status: 500 Internal Server Error
@@ -555,7 +545,7 @@ ResponseBody: {
 }
 ```
 
-#### Error response
+or
 
 ```shell
 Status: 409 Conflict
@@ -565,7 +555,7 @@ ResponseBody: {
 }
 ```
 
-#### Error response
+or
 
 ```shell
 Status: 500 Internal Server Error
@@ -626,7 +616,7 @@ ResponseBody: {
 }
 ```
 
-#### Error response
+or
 
 ```shell
 Status: 401 Unauthorized
@@ -636,7 +626,7 @@ ResponseBody: {
 }
 ```
 
-#### Error response
+or
 
 ```shell
 Status: 404 Not Found
@@ -646,7 +636,7 @@ ResponseBody: {
 }
 ```
 
-#### Error response
+or
 
 ```shell
 Status: 500 Internal Server Error
@@ -694,7 +684,7 @@ ResponseBody: {
 }
 ```
 
-#### Error response
+or
 
 ```shell
 Status: 404 Not Found
@@ -704,7 +694,7 @@ ResponseBody: {
 }
 ```
 
-#### Error response
+or
 
 ```shell
 Status: 500 Internal Server Error
@@ -758,7 +748,7 @@ ResponseBody: {
 }
 ```
 
-#### Error response
+or
 
 ```shell
 Status: 404 Not Found
@@ -768,7 +758,7 @@ ResponseBody: {
 }
 ```
 
-#### Error response
+or
 
 ```shell
 Status: 500 Internal Server Error
@@ -829,7 +819,7 @@ ResponseBody: {
 }
 ```
 
-#### Error response
+or
 
 ```shell
 Status: 400 Bad Request
@@ -839,7 +829,7 @@ ResponseBody: {
 }
 ```
 
-#### Error response
+or
 
 ```shell
 Status: 404 Not Found
@@ -849,7 +839,7 @@ ResponseBody: {
 }
 ```
 
-#### Error response
+or
 
 ```shell
 Status: 500 Internal Server Error
@@ -858,3 +848,10 @@ ResponseBody: {
   "message": "Server error"
 }
 ```
+
+## Команди
+
+- `npm start` &mdash; старт сервера в режиме production
+- `npm run start:dev` &mdash; старт сервера в режиме разработки (development)
+- `npm run lint` &mdash; запустить выполнение проверки кода при помощи eslint
+- `npm lint:fix` &mdash; та же проверка линтера, но с авто исправлением простых ошибок
