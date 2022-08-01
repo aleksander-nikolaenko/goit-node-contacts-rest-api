@@ -1,0 +1,32 @@
+const express = require("express");
+const ctrlUsers = require("../../controllers/users");
+const { ctrlWrapper } = require("../../helpers");
+const { validationReqBody, validationToken } = require("../../middlewares");
+const { schemas } = require("../../models/user");
+
+const router = new express.Router();
+
+router.post(
+  "/signup",
+  validationReqBody(schemas.register),
+  ctrlWrapper(ctrlUsers.register)
+);
+
+router.post(
+  "/login",
+  validationReqBody(schemas.register),
+  ctrlWrapper(ctrlUsers.login)
+);
+
+router.get("/logout", validationToken, ctrlWrapper(ctrlUsers.logout));
+
+router.get("/current", validationToken, ctrlWrapper(ctrlUsers.getCurrent));
+
+router.patch(
+  "/",
+  validationToken,
+  validationReqBody(schemas.update),
+  ctrlWrapper(ctrlUsers.updateSubscription)
+);
+
+module.exports = router;

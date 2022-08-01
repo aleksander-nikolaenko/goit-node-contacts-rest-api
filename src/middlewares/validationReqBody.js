@@ -1,9 +1,8 @@
 const { createError } = require("../helpers");
-const { schemas } = require("../models/contacts");
 
-const validation = (schema) => (req, res, next) => {
+const validationReqBody = (schema) => (req, res, next) => {
   if (Object.keys(req.body).length === 0) {
-    next(createError(400, "missing fields"));
+    next(createError(400, "missing request body"));
     return;
   }
 
@@ -23,10 +22,4 @@ const validation = (schema) => (req, res, next) => {
   next();
 };
 
-const validateAddBody = validation(schemas.add);
-const validateFavoriteBody = validation(schemas.updateFavorite);
-
-module.exports = {
-  validateAddBody,
-  validateFavoriteBody,
-};
+module.exports = validationReqBody;
