@@ -1,40 +1,32 @@
 const express = require("express");
-const ctrlContacts = require("../../controllers/contacts");
+const { ctrlContacts } = require("../../controllers");
 const { ctrlWrapper } = require("../../helpers");
-const { validationReqBody, validationToken } = require("../../middlewares");
-const { schemas } = require("../../models/contact");
+
+const validation = require("../../middlewares/validation");
 
 const router = new express.Router();
 
-router.get("/", validationToken, ctrlWrapper(ctrlContacts.getContacts));
+router.get("/", ctrlWrapper(ctrlContacts.getContacts));
 
-router.get("/:id", validationToken, ctrlWrapper(ctrlContacts.getContactById));
+router.get("/:id", ctrlWrapper(ctrlContacts.getContactById));
 
 router.post(
   "/",
-  validationToken,
-  validationReqBody(schemas.add),
+  validation.validateAddBody,
   ctrlWrapper(ctrlContacts.addContact)
 );
 
-router.delete(
-  "/:id",
-  validationToken,
-  ctrlWrapper(ctrlContacts.deleteContactById)
-);
+router.delete("/:id", ctrlWrapper(ctrlContacts.deleteContactById));
 
 router.put(
   "/:id",
-  validationToken,
-  validationReqBody(schemas.add),
+  validation.validateAddBody,
   ctrlWrapper(ctrlContacts.updateContactById)
 );
 
 router.patch(
   "/:id/favorite",
-  validationToken,
-  validationReqBody(schemas.updateFavorite),
+  validation.validateFavoriteBody,
   ctrlWrapper(ctrlContacts.updateContactFavoriteById)
 );
-
 module.exports = router;
