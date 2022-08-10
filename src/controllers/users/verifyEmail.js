@@ -1,4 +1,4 @@
-const serviceUser = require("../../repository/users");
+const serviceUser = require("../../services/users");
 const { createError } = require("../../helpers");
 
 const verifyEmail = async (req, res) => {

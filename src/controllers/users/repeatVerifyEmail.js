@@ -1,5 +1,5 @@
 const { createError, sendVerifyEmail } = require("../../helpers");
-const serviceUsers = require("../../repository/users");
+const serviceUsers = require("../../services/users");
 
 const repeatVerifyEmail = async (req, res) => {
   const { email } = req.body;
