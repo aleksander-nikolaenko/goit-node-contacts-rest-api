@@ -28,8 +28,7 @@ const sendVerifyEmail = async (email, verificationToken = uuid()) => {
 
   `,
   };
-  const result = await sendEmail(msg);
-  console.log(result);
+  await sendEmail(msg);
   return verificationToken;
 };
 
