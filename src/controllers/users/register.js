@@ -1,7 +1,7 @@
 const bcrypt = require("bcryptjs");
 const gravatar = require("gravatar");
-const serviceUsers = require("../../services/users");
-const { createError } = require("../../helpers");
+const serviceUsers = require("../../repository/users");
+const { createError, sendVerifyEmail } = require("../../helpers");
 
 const register = async (req, res) => {
   const { email, password } = req.body;
@@ -10,10 +10,12 @@ const register = async (req, res) => {
     throw createError(409, `Email in use`);
   }
   const hashPassword = await bcrypt.hash(password, 10);
+  const verificationToken = await sendVerifyEmail(email);
   const result = await serviceUsers.addUser({
     ...req.body,
     password: hashPassword,
     avatarURL: gravatar.url(email),
+    verificationToken,
   });
   res.status(201).json({
     user: {

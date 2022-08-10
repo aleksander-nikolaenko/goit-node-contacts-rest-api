@@ -1,4 +1,4 @@
-const serviceContacts = require("../../services/contacts");
+const serviceContacts = require("../../repository/contacts");
 
 const addContact = async (req, res) => {
   const { id: owner } = req.user;

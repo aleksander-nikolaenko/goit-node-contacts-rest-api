@@ -1,7 +1,7 @@
 const fs = require("fs/promises");
 const path = require("path");
 const Jimp = require("jimp");
-const serviceUser = require("../../services/users");
+const serviceUser = require("../../repository/users");
 
 const { basedir } = global;
 const publicDir = path.join(basedir, "..", "public");

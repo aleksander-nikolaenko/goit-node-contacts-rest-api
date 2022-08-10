@@ -1,4 +1,4 @@
-const serviceContacts = require("../../services/contacts");
+const serviceContacts = require("../../repository/contacts");
 
 const getContacts = async (req, res) => {
   const { page = 1, limit = 20, favorite } = req.query;

@@ -1,4 +1,4 @@
-const serviceUser = require("../../services/users");
+const serviceUser = require("../../repository/users");
 const updateSubscription = async (req, res) => {
   const { _id: id } = req.user;
   const { subscription } = req.body;

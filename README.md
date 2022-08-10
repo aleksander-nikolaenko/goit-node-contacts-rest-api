@@ -926,6 +926,134 @@ ResponseBody: {
 }
 ```
 
+### @ VERIFY USER EMAIL
+
+---
+
+Возвращает сообщение в json-формате
+
+- **URL**
+  /api/users/verify/:verificationToken
+- **Method:**
+  `GET`
+- **URL Params**
+  **Required:**
+  `verificationToken=[string]`
+- **Data Params**
+  None
+
+#### Request
+
+```shell
+GET /api/users/verify/:verificationToken
+Content-Type: application/json
+```
+
+#### Success response
+
+```shell
+Status: 200 OK
+Content-Type: application/json
+ResponseBody: {
+  message: 'Verification successful',
+}
+```
+
+#### Error response
+
+```shell
+Status: 404 Not Found
+Content-Type: application/json
+ResponseBody: {
+  message: 'User not found'
+}
+```
+
+or
+
+```shell
+Status: 500 Internal Server Error
+Content-Type: application/json
+ResponseBody: {
+  "message": "Server error"
+}
+```
+
+### @ RESEND USER EMAIL VALIDATION
+
+---
+
+Возвращает сообщение в json-формате
+
+- **URL**
+  /api/users/verify
+- **Method:**
+  `POST`
+- **URL Params**
+  None
+- **Data Params**
+  None
+
+#### Request
+
+```shell
+POST /api/users/verify
+Content-Type: application/json
+RequestBody: {
+  "email": "example@example.com",
+}
+```
+
+#### Success response
+
+```shell
+Status: 200 OK
+Content-Type: application/json
+ResponseBody: {
+  "message": "Verification email sent"
+}
+```
+
+#### Error response
+
+```shell
+Status: 400 Bad Request
+Content-Type: application/json
+ResponseBody: {
+  "message": "<Ошибка от Joi или другой библиотеки валидации>"
+}
+```
+
+or
+
+```shell
+Status: 400 Bad Request
+Content-Type: application/json
+ResponseBody: {
+  message: "Verification has already been passed"
+}
+```
+
+or
+
+```shell
+Status: 404 Not Found
+Content-Type: application/json
+ResponseBody: {
+  "message": "Not found"
+}
+```
+
+or
+
+```shell
+Status: 500 Internal Server Error
+Content-Type: application/json
+ResponseBody: {
+  "message": "Server error"
+}
+```
+
 ## Команди
 
 - `npm start` &mdash; старт сервера в режиме production
