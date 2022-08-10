@@ -4,7 +4,10 @@ const updateUserTokenById = (userId, userSubscription) => {
   const result = User.findByIdAndUpdate(
     userId,
     { subscription: userSubscription },
-    { new: true }
+    {
+      new: true,
+      runValidators: true,
+    }
   );
   return result;
 };

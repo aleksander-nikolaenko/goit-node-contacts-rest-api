@@ -852,6 +852,80 @@ ResponseBody: {
 }
 ```
 
+### @ UPDATE USER AVATAR
+
+---
+
+Возвращает данные измененного поля пользователя в json-формате
+
+- **URL**
+  /api/users/avatars
+- **Method:**
+  `PATCH`
+- **URL Params**
+  None
+- **Data Params**
+  None
+
+#### Request
+
+```shell
+PATCH /api/users
+Authorization: "Bearer {{token}}"
+Content-Type: multipart/form-data
+RequestBody: upload file
+```
+
+#### Success response
+
+```shell
+Status: 200 OK
+Content-Type: application/json
+ResponseBody: {
+  "avatarURL": "Link to file"
+}
+```
+
+#### Error response
+
+```shell
+Status: 401 Unauthorized
+Content-Type: application/json
+ResponseBody: {
+ "message": "Not authorized"
+}
+```
+
+or
+
+```shell
+Status: 400 Bad Request
+Content-Type: application/json
+ResponseBody: {
+  "message": "<Ошибка от Joi или другой библиотеки валидации>"
+}
+```
+
+or
+
+```shell
+Status: 404 Not Found
+Content-Type: application/json
+ResponseBody: {
+  "message": "Not found"
+}
+```
+
+or
+
+```shell
+Status: 500 Internal Server Error
+Content-Type: application/json
+ResponseBody: {
+  "message": "Server error"
+}
+```
+
 ## Команди
 
 - `npm start` &mdash; старт сервера в режиме production

@@ -16,8 +16,16 @@ const userSchema = new Schema(
     },
     subscription: {
       type: String,
-      enum: ["starter", "pro", "business"],
+      enum: {
+        values: ["starter", "pro", "business"],
+        message:
+          "{VALUE} is not supported, have to choose between 'starter', 'pro' or 'business' ",
+      },
       default: "starter",
+    },
+    avatarURL: {
+      type: String,
+      required: true,
     },
     token: {
       type: String,

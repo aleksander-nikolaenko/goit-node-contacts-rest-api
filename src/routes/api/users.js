@@ -1,7 +1,11 @@
 const express = require("express");
 const ctrlUsers = require("../../controllers/users");
 const { ctrlWrapper } = require("../../helpers");
-const { validationReqBody, validationToken } = require("../../middlewares");
+const {
+  validationReqBody,
+  validationToken,
+  fileUpload,
+} = require("../../middlewares");
 const { schemas } = require("../../models/user");
 
 const router = new express.Router();
@@ -27,6 +31,13 @@ router.patch(
   validationToken,
   validationReqBody(schemas.update),
   ctrlWrapper(ctrlUsers.updateSubscription)
+);
+
+router.patch(
+  "/avatars",
+  validationToken,
+  fileUpload.single("avatar"),
+  ctrlWrapper(ctrlUsers.updateAvatar)
 );
 
 module.exports = router;
