@@ -204,9 +204,7 @@ ResponseBody:
   "phone": "(748) 206-2688",
   "favorite": false,
   "owner": "62e3e191038845b2f6b3cd9c",
-  "_id": "62e416cd43a3ec9b1a4b1fd4",
-  "createdAt": "2022-07-30T09:39:08.745Z",
-  "updatedAt": "2022-07-30T09:39:08.745Z"
+  "_id": "62e416cd43a3ec9b1a4b1fd4"
 }
 ```
 
@@ -355,9 +353,7 @@ ResponseBody:
   "phone": "(748) 206-2689",
   "favorite": false,
   "owner": "62e3e191038845b2f6b3cd9c",
-  "_id": "62e416cd43a3ec9b1a4b1fd4",
-  "createdAt": "2022-07-30T09:39:08.745Z",
-  "updatedAt": "2022-07-30T09:39:08.745Z"
+  "_id": "62e416cd43a3ec9b1a4b1fd4"
 }
 ```
 
@@ -440,9 +436,7 @@ ResponseBody:
   "phone": "(748) 206-2688",
   "favorite": true,
   "owner": "62e3e191038845b2f6b3cd9c",
-  "_id": "62e416cd43a3ec9b1a4b1fd4",
-  "createdAt": "2022-07-30T09:39:08.745Z",
-  "updatedAt": "2022-07-30T09:39:08.745Z"
+  "_id": "62e416cd43a3ec9b1a4b1fd4"
 }
 ```
 
@@ -903,6 +897,134 @@ Status: 400 Bad Request
 Content-Type: application/json
 ResponseBody: {
   "message": "<Ошибка от Joi или другой библиотеки валидации>"
+}
+```
+
+or
+
+```shell
+Status: 404 Not Found
+Content-Type: application/json
+ResponseBody: {
+  "message": "Not found"
+}
+```
+
+or
+
+```shell
+Status: 500 Internal Server Error
+Content-Type: application/json
+ResponseBody: {
+  "message": "Server error"
+}
+```
+
+### @ VERIFY USER EMAIL
+
+---
+
+Возвращает сообщение в json-формате
+
+- **URL**
+  /api/users/verify/:verificationToken
+- **Method:**
+  `GET`
+- **URL Params**
+  **Required:**
+  `verificationToken=[string]`
+- **Data Params**
+  None
+
+#### Request
+
+```shell
+GET /api/users/verify/:verificationToken
+Content-Type: application/json
+```
+
+#### Success response
+
+```shell
+Status: 200 OK
+Content-Type: application/json
+ResponseBody: {
+  message: 'Verification successful',
+}
+```
+
+#### Error response
+
+```shell
+Status: 404 Not Found
+Content-Type: application/json
+ResponseBody: {
+  message: 'User not found'
+}
+```
+
+or
+
+```shell
+Status: 500 Internal Server Error
+Content-Type: application/json
+ResponseBody: {
+  "message": "Server error"
+}
+```
+
+### @ RESEND USER EMAIL VALIDATION
+
+---
+
+Возвращает сообщение в json-формате
+
+- **URL**
+  /api/users/verify
+- **Method:**
+  `POST`
+- **URL Params**
+  None
+- **Data Params**
+  None
+
+#### Request
+
+```shell
+POST /api/users/verify
+Content-Type: application/json
+RequestBody: {
+  "email": "example@example.com",
+}
+```
+
+#### Success response
+
+```shell
+Status: 200 OK
+Content-Type: application/json
+ResponseBody: {
+  "message": "Verification email sent"
+}
+```
+
+#### Error response
+
+```shell
+Status: 400 Bad Request
+Content-Type: application/json
+ResponseBody: {
+  "message": "<Ошибка от Joi или другой библиотеки валидации>"
+}
+```
+
+or
+
+```shell
+Status: 400 Bad Request
+Content-Type: application/json
+ResponseBody: {
+  message: "Verification has already been passed"
 }
 ```
 
