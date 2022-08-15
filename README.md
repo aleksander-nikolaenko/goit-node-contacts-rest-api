@@ -1,5 +1,13 @@
+## Команди
+
+- `npm start` &mdash; старт сервера в режиме production
+- `npm run start:dev` &mdash; старт сервера в режиме разработки (development)
+- `npm run lint` &mdash; запустить выполнение проверки кода при помощи eslint
+- `npm lint:fix` &mdash; та же проверка линтера, но с авто исправлением простых ошибок
+
 ## [Postman documentation link](https://documenter.getpostman.com/view/19569831/VUjTiNF9)
-## REST API поддерживает следующие рауты
+---
+### REST API поддерживает следующие рауты
 
 ### ENDPOINT: **CONTACTS**
 
@@ -1048,10 +1056,3 @@ ResponseBody: {
   "message": "Server error"
 }
 ```
-
-## Команди
-
-- `npm start` &mdash; старт сервера в режиме production
-- `npm run start:dev` &mdash; старт сервера в режиме разработки (development)
-- `npm run lint` &mdash; запустить выполнение проверки кода при помощи eslint
-- `npm lint:fix` &mdash; та же проверка линтера, но с авто исправлением простых ошибок
