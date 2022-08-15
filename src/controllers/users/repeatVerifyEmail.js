@@ -1,4 +1,5 @@
-const { createError, sendVerifyEmail } = require("../../helpers");
+const { createError } = require("../../helpers");
+const { sendVerifyEmail } = require("../../services/email");
 const serviceUsers = require("../../services/users");
 
 const repeatVerifyEmail = async (req, res) => {

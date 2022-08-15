@@ -204,9 +204,7 @@ ResponseBody:
   "phone": "(748) 206-2688",
   "favorite": false,
   "owner": "62e3e191038845b2f6b3cd9c",
-  "_id": "62e416cd43a3ec9b1a4b1fd4",
-  "createdAt": "2022-07-30T09:39:08.745Z",
-  "updatedAt": "2022-07-30T09:39:08.745Z"
+  "_id": "62e416cd43a3ec9b1a4b1fd4"
 }
 ```
 
@@ -355,9 +353,7 @@ ResponseBody:
   "phone": "(748) 206-2689",
   "favorite": false,
   "owner": "62e3e191038845b2f6b3cd9c",
-  "_id": "62e416cd43a3ec9b1a4b1fd4",
-  "createdAt": "2022-07-30T09:39:08.745Z",
-  "updatedAt": "2022-07-30T09:39:08.745Z"
+  "_id": "62e416cd43a3ec9b1a4b1fd4"
 }
 ```
 
@@ -440,9 +436,7 @@ ResponseBody:
   "phone": "(748) 206-2688",
   "favorite": true,
   "owner": "62e3e191038845b2f6b3cd9c",
-  "_id": "62e416cd43a3ec9b1a4b1fd4",
-  "createdAt": "2022-07-30T09:39:08.745Z",
-  "updatedAt": "2022-07-30T09:39:08.745Z"
+  "_id": "62e416cd43a3ec9b1a4b1fd4"
 }
 ```
 

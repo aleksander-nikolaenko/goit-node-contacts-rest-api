@@ -1,7 +1,8 @@
 const bcrypt = require("bcryptjs");
 const gravatar = require("gravatar");
 const serviceUsers = require("../../services/users");
-const { createError, sendVerifyEmail } = require("../../helpers");
+const { createError } = require("../../helpers");
+const { sendVerifyEmail } = require("../../services/email");
 
 const register = async (req, res) => {
   const { email, password } = req.body;
